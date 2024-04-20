@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPU Scheduling Algorithm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="cpu.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="topbar">
+        <div style="display: flex; align-items: center; ">
+            <img src="cpu.png" style="height: 32px; margin-right: 16px; " alt="">
+            <h1>Virtual Lab</h1> 
+        </div>
+        <h2 class="subject">Operating System</h2>
+    </div>
+
+    <div class="main-container">
+        <div class="value-container">
+            <h1>Enter Values</h1>
+            <div class="value-selection">
+                <form class="form" action="post">
+                    <div class="fieldselect">
+                        <label for="Algorithm">Algorithm:</label>
+                        <select class="selection" name="algo" id="algo">
+                            <option value="FCFS">FCFS</option>
+                            <option value="SJF">SJF</option>
+                        </select>
+                    </div>
+
+                    <div class="fieldselect">
+                        <label for="Process ID">Process ID:</label>
+                        <input type="text" name="processid" id="processid" placeholder="">
+                    </div>
+
+                    <div class="fieldselect">
+                        <label for="arrivaltime">Arrival Time:</label>
+                        <input type="text" name="arrivaltime" id="arrivaltime" placeholder="">
+                    </div>
+
+                    <div class="fieldselect">
+                        <label for="bursttime">Burst Time:</label>
+                        <input type="text" name="bursttime" id="bursttime" placeholder="">
+                    </div>
+
+                    <button type="button" onclick="addProcess()">Add Process</button>
+                    <button type="button" onclick="calculate()">Calculate</button>
+                    <i class="fas fa-redo reset-icon" onclick="resetInputs()"></i>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="answer-container">
+            <h1>Output</h1>
+            <table id="output-table">
+                <thead>
+                    <tr>
+                        <th>Arrival Time</th>
+                        <th>Burst Time</th>
+                        <th>Completion Time</th>
+                        <th>Turnaround Time</th>
+                        <th>Waiting Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Output data will be generated dynamically -->
+                </tbody>
+            </table>
+
+            <h1 style="margin-top: 24px;">Input</h1>
+            <table id="input-table">
+                <thead>
+                    <tr>
+                        <th>Process ID</th>
+                        <th>Arrival Time</th>
+                        <th>Burst Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Input data will be added dynamically -->
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-column">
+
+            <p class="para"><span class="names">Presented By</span><br><br>Anish Nakhale - 22102A0048<br>Shivam
+                Pachpute - 22102A0040<br>Shivanshu Pandey - 22102A0051<br>Siddharth Singh - 22102A0050 <br>Rohit Patil - 22102A0071</p>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-column">
+            <p class="para">The Virtual Lab for Operating System Scheduling Algorithms offers an interactive platform to
+                explore First-Come, First-Served (FCFS) and Shortest Job First (SJF) scheduling. Through real-time
+                simulations, users gain insights into these algorithms' workings and real-world implications, enhancing
+                their understanding of operating system scheduling.</p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
